@@ -5,9 +5,9 @@ import { bookProjects } from "../data";
 
 const image = "https://www.xiaobaowei.com/works/books/dictionary/65.jpg";
 export const metadata: Metadata = {
-  title: "绘本与书 — 小宝维", description: "小宝维的绘本、艺术家书与手工书作品。",
-  openGraph: { title: "绘本与书 — 小宝维", description: "图像在纸张、装订与叙事之间发生。", url: "https://www.xiaobaowei.com/books", images: [image] },
-  twitter: { card: "summary_large_image", title: "绘本与书 — 小宝维", description: "图像在纸张、装订与叙事之间发生。", images: [image] },
+  title: "绘本与书 — 小保伟", description: "小保伟的绘本、艺术家书与手工书作品。",
+  openGraph: { title: "绘本与书 — 小保伟", description: "图像在纸张、装订与叙事之间发生。", url: "https://www.xiaobaowei.com/books", images: [image] },
+  twitter: { card: "summary_large_image", title: "绘本与书 — 小保伟", description: "图像在纸张、装订与叙事之间发生。", images: [image] },
 };
 
 export default function BooksPage() {

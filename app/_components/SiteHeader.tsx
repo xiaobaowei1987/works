@@ -15,7 +15,7 @@ export function SiteHeader({ active, locale = "zh" }: { active?: string; locale?
   };
   return (
     <header className="site-header">
-      <a className="wordmark" href="/" aria-label="小宝维作品集首页">XIAO BAOWEI <span>小宝维</span></a>
+      <a className="wordmark" href="/" aria-label="小保伟作品集首页">XIAO BAOWEI <span>小保伟</span></a>
       <nav aria-label="主导航">
         {slugs.map((slug, index) => {
           const href = locale === "zh" ? `/${slug}` : `/${locale}/${slug}`;

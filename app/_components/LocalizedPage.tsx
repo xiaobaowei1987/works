@@ -39,7 +39,7 @@ const copy = {
       ["鶴さん、お金を返して", "Picture book", "青いボールペン、手書き文字、繰り返し現れる小さな家が、軽やかで少し不思議な物語をつくる。", "crane", ["31.jpg", "42.jpg", "78.jpg", "84.jpg", "photo.jpg"]],
     ] as const,
     filmTitles: ["5月17日　自分の夢は誰にも説明できない", "じゃんけん", "後ろに隠れる", "静かに前へ"],
-    aboutTitle: "小宝維はイラストレーターです。",
+    aboutTitle: "小保伟はイラストレーターです。",
     about: "人物と日々の経験を手がかりに、イラスト、手書きの詩、絵本、アニメーションを通して、人と人のあいだにある繊細で温かく、ときに少し不思議な瞬間を記録しています。",
     imageAlt: "作品",
   },
@@ -49,7 +49,7 @@ export function localizedMeta(locale: Locale, section: Section) {
   const lang = locale === "en" ? "en" : "ja";
   const c = copy[lang];
   const titles = { home: "Xiao Baowei — Illustrator", illustration: c.section.illustration[0], poems: c.section.poems[0], books: c.section.books[0], films: c.section.films[0], about: c.aboutTitle };
-  const descriptions = { home: locale === "en" ? "Illustration, handwritten poetry, artist books, and animation by Xiao Baowei." : "小宝維のイラスト、手書きの詩、絵本、アニメーション。", illustration: c.section.illustration[1], poems: c.section.poems[1], books: c.section.books[1], films: c.section.films[1], about: c.about };
+  const descriptions = { home: locale === "en" ? "Illustration, handwritten poetry, artist books, and animation by Xiao Baowei." : "小保伟のイラスト、手書きの詩、絵本、アニメーション。", illustration: c.section.illustration[1], poems: c.section.poems[1], books: c.section.books[1], films: c.section.films[1], about: c.about };
   const images = { home: "/og.jpg", illustration: "/works/illustration/warmth.jpg", poems: "/works/poems/poem-123.jpg", books: "/works/books/dictionary/65.jpg", films: "/works/illustration/untitled-88.jpg", about: "/works/illustration/dialogue.jpg" };
   return { title: titles[section], description: descriptions[section], image: images[section] };
 }

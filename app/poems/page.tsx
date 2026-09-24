@@ -5,9 +5,9 @@ import { poems } from "../data";
 
 const image = "https://www.xiaobaowei.com/works/poems/poem-123.jpg";
 export const metadata: Metadata = {
-  title: "琐碎诗 — 小宝维", description: "小宝维的手写诗作品。",
-  openGraph: { title: "琐碎诗 — 小宝维", description: "写一点今天想过，但没有说完的话。", url: "https://www.xiaobaowei.com/poems", images: [image] },
-  twitter: { card: "summary_large_image", title: "琐碎诗 — 小宝维", description: "写一点今天想过，但没有说完的话。", images: [image] },
+  title: "琐碎诗 — 小保伟", description: "小保伟的手写诗作品。",
+  openGraph: { title: "琐碎诗 — 小保伟", description: "写一点今天想过，但没有说完的话。", url: "https://www.xiaobaowei.com/poems", images: [image] },
+  twitter: { card: "summary_large_image", title: "琐碎诗 — 小保伟", description: "写一点今天想过，但没有说完的话。", images: [image] },
 };
 
 export default function PoemsPage() {

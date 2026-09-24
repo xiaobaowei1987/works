@@ -5,9 +5,9 @@ import { illustrations } from "../data";
 
 const image = "https://www.xiaobaowei.com/works/illustration/warmth.jpg";
 export const metadata: Metadata = {
-  title: "插画作品 — 小宝维", description: "小宝维关于人物、关系与日常情绪的插画作品。",
-  openGraph: { title: "插画作品 — 小宝维", description: "人物、关系和那些很难解释的情绪。", url: "https://www.xiaobaowei.com/illustration", images: [image] },
-  twitter: { card: "summary_large_image", title: "插画作品 — 小宝维", description: "人物、关系和那些很难解释的情绪。", images: [image] },
+  title: "插画作品 — 小保伟", description: "小保伟关于人物、关系与日常情绪的插画作品。",
+  openGraph: { title: "插画作品 — 小保伟", description: "人物、关系和那些很难解释的情绪。", url: "https://www.xiaobaowei.com/illustration", images: [image] },
+  twitter: { card: "summary_large_image", title: "插画作品 — 小保伟", description: "人物、关系和那些很难解释的情绪。", images: [image] },
 };
 
 export default function IllustrationPage() {

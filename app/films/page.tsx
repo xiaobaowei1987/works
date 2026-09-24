@@ -5,9 +5,9 @@ import { films } from "../data";
 
 const image = "https://www.xiaobaowei.com/works/illustration/untitled-88.jpg";
 export const metadata: Metadata = {
-  title: "动画作品 — 小宝维", description: "小宝维的动画与动态影像作品。",
-  openGraph: { title: "动画作品 — 小宝维", description: "让停在纸上的人，轻轻动一下。", url: "https://www.xiaobaowei.com/films", images: [image] },
-  twitter: { card: "summary_large_image", title: "动画作品 — 小宝维", description: "让停在纸上的人，轻轻动一下。", images: [image] },
+  title: "动画作品 — 小保伟", description: "小保伟的动画与动态影像作品。",
+  openGraph: { title: "动画作品 — 小保伟", description: "让停在纸上的人，轻轻动一下。", url: "https://www.xiaobaowei.com/films", images: [image] },
+  twitter: { card: "summary_large_image", title: "动画作品 — 小保伟", description: "让停在纸上的人，轻轻动一下。", images: [image] },
 };
 
 export default function FilmsPage() {
