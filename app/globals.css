@@ -13,6 +13,23 @@ a { color: inherit; text-decoration: none; }
 img, video { display: block; width: 100%; }
 ::selection { background: var(--blue); color: #fff; }
 
+.home-simple { min-height: 100vh; background: #fff; }
+.home-simple .site-header {
+  width: min(980px, calc(100% - 40px));
+  display: block;
+  margin: 0 auto;
+  padding: 54px 0 0;
+  border-bottom: 0;
+}
+.home-simple .wordmark { font-size: 30px; font-weight: 400; letter-spacing: .045em; }
+.home-simple .wordmark span { margin-left: 14px; color: #777; font-size: 12px; font-weight: 400; letter-spacing: .12em; }
+.home-simple nav { gap: 38px; margin-top: 17px; color: #999; font-size: 14px; }
+.home-simple nav a { border: 0; transition: color .2s ease; }
+.home-simple nav a:hover, .home-simple nav a:focus-visible { color: var(--ink); }
+.home-artwork { display: flex; justify-content: center; padding: 64px 20px 48px; }
+.home-artwork img { width: min(590px, 58vw); height: auto; object-fit: contain; }
+.home-copyright { width: min(980px, calc(100% - 40px)); margin: 0 auto; padding: 0 0 32px; color: #aaa; font-size: 9px; letter-spacing: .04em; }
+
 .site-header {
   position: relative;
   z-index: 20;
@@ -178,6 +195,14 @@ footer h2 { margin: 28px 0 100px; font-size: clamp(54px, 9vw, 140px); font-weigh
 .footer-meta { display: flex; justify-content: space-between; margin-top: 80px; color: #8a8982; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; }
 
 @media (max-width: 800px) {
+  .home-simple .site-header { width: auto; padding: 28px 20px 0; }
+  .home-simple .wordmark { font-size: 23px; }
+  .home-simple .wordmark span { display: inline; margin-left: 8px; font-size: 9px; }
+  .home-simple nav { flex-wrap: wrap; gap: 10px 22px; margin-top: 18px; font-size: 12px; overflow: visible; }
+  .home-simple nav a:nth-last-child(1) { display: block; }
+  .home-artwork { padding: 48px 14px 35px; }
+  .home-artwork img { width: min(680px, 92vw); }
+  .home-copyright { width: auto; margin: 0 20px; padding-bottom: 24px; }
   .site-header { padding: 20px 18px; }
   .wordmark span { display: none; }
   nav { gap: 11px; overflow-x: auto; }
