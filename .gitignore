@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/node_modules-cloud-cache/
 /.pnp
 .pnp.*
 .yarn/*
@@ -15,6 +16,7 @@
 
 # next.js
 /.next/
+/.next-cloud-cache/
 /.vinext/
 /out/
 
@@ -38,3 +40,7 @@ yarn-error.log*
 /.wrangler/
 /outputs/
 /work/
+
+# local source artwork (optimized copies live in public/works)
+/网站资料/
+/log.jpg
