@@ -162,6 +162,37 @@ nav a:hover, nav a:focus-visible, nav a[aria-current="page"] { border-color: cur
 .poem-card figcaption { padding-top: 12px; color: #aaa9a2; font-size: 11px; }
 .rail-hint { margin: 32px 0 0; color: #898983; font-size: 11px; }
 
+.poem-book { padding: 75px 0 10px; outline: none; }
+.poem-book-stage { position: relative; width: min(640px, 68vw); margin: 0 auto; perspective: 1800px; }
+.poem-book-cover { position: absolute; inset: 18px -16px -18px 12px; border-radius: 3px 9px 9px 3px; background: #0c72a0; box-shadow: 0 28px 70px rgba(0,0,0,.48); transform: rotate(1.2deg); }
+.poem-book-page { position: relative; z-index: 2; margin: 0; padding: 18px 18px 12px 27px; border-radius: 2px 7px 7px 2px; background: #f8f7f1; color: var(--ink); box-shadow: -10px 4px 24px rgba(0,0,0,.28), inset 12px 0 18px rgba(0,0,0,.06); transform-style: preserve-3d; }
+.poem-book-page::before, .poem-book-page::after { content: ""; position: absolute; top: 8px; right: -5px; bottom: 8px; width: 5px; border-radius: 0 3px 3px 0; background: repeating-linear-gradient(to bottom, #e9e6dd 0 2px, #faf9f4 2px 4px); }
+.poem-book-page::after { right: -9px; opacity: .55; }
+.poem-book-page img { aspect-ratio: 1131 / 1600; object-fit: contain; background: #fff; }
+.poem-book-page figcaption { display: flex; justify-content: space-between; padding-top: 11px; color: #77736c; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; }
+.page-edge { position: absolute; z-index: 2; top: 18px; bottom: 40px; left: 18px; width: 1px; background: rgba(0,0,0,.09); box-shadow: 4px 0 8px rgba(0,0,0,.08); }
+.poem-book-page.is-turning-next { animation: turn-page-next .52s ease-in-out; transform-origin: left center; }
+.poem-book-page.is-turning-previous { animation: turn-page-previous .52s ease-in-out; transform-origin: right center; }
+.book-arrow { position: absolute; z-index: 4; top: 50%; width: 52px; height: 52px; border: 1px solid rgba(255,255,255,.35); border-radius: 50%; background: transparent; color: #fff; font-size: 22px; cursor: pointer; transform: translateY(-50%); transition: background .2s ease, opacity .2s ease; }
+.book-arrow:hover:not(:disabled), .book-arrow:focus-visible { background: #fff; color: var(--ink); }
+.book-arrow:disabled { opacity: .16; cursor: default; }
+.book-arrow-left { left: -92px; }
+.book-arrow-right { right: -92px; }
+.book-help { margin: 45px 0 0; color: #777771; font-size: 10px; letter-spacing: .08em; text-align: center; text-transform: uppercase; }
+
+@keyframes turn-page-next {
+  0% { transform: rotateY(0); filter: brightness(1); }
+  49% { transform: rotateY(-86deg); filter: brightness(.72); }
+  50% { transform: rotateY(86deg); filter: brightness(.72); }
+  100% { transform: rotateY(0); filter: brightness(1); }
+}
+@keyframes turn-page-previous {
+  0% { transform: rotateY(0); filter: brightness(1); }
+  49% { transform: rotateY(86deg); filter: brightness(.72); }
+  50% { transform: rotateY(-86deg); filter: brightness(.72); }
+  100% { transform: rotateY(0); filter: brightness(1); }
+}
+
 .book-project { display: grid; grid-template-columns: minmax(220px, .8fr) minmax(0, 2.2fr); gap: 5vw; padding: 7vw 0; border-bottom: 1px solid var(--line); }
 .book-copy { position: sticky; top: 20px; align-self: start; }
 .book-copy > p:first-child { font-size: 10px; letter-spacing: .12em; }
@@ -227,6 +258,13 @@ footer h2 { margin: 28px 0 100px; font-size: clamp(54px, 9vw, 140px); font-weigh
   .art-card:nth-child(even) { padding-top: 0; }
   .poem-rail { grid-auto-columns: 80vw; gap: 14px; padding-top: 40px; }
   .poem-gallery { grid-template-columns: 1fr; gap: 60px; padding-top: 40px; }
+  .poem-book { padding-top: 50px; }
+  .poem-book-stage { width: min(78vw, 520px); }
+  .poem-book-page { padding: 10px 10px 9px 16px; }
+  .page-edge { top: 10px; bottom: 32px; left: 10px; }
+  .book-arrow { width: 40px; height: 40px; font-size: 17px; }
+  .book-arrow-left { left: -48px; }
+  .book-arrow-right { right: -48px; }
   .book-project { grid-template-columns: 1fr; padding: 80px 0; }
   .book-copy { position: static; }
   .book-copy h2 { margin-top: 35px; }
@@ -239,4 +277,5 @@ footer h2 { margin: 28px 0 100px; font-size: clamp(54px, 9vw, 140px); font-weigh
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .art-card img { transition: none; }
+  .poem-book-page.is-turning-next, .poem-book-page.is-turning-previous { animation: none; }
 }

@@ -1,6 +1,7 @@
-import { films, illustrations, poems } from "../data";
+import { films, illustrations } from "../data";
 import { SiteFooter } from "./SiteFooter";
 import { Locale, SiteHeader } from "./SiteHeader";
+import { PoemBook } from "./PoemBook";
 
 export type Section = "home" | "illustration" | "poems" | "books" | "films" | "about";
 
@@ -61,7 +62,7 @@ export function LocalizedPage({ locale, section }: { locale: "en" | "ja"; sectio
 
   if (section === "illustration") return <main id="top" className="illustration-page"><SiteHeader active={active} locale={locale} /><section className="section illustration-section subpage"><SectionHead number="01" title={c.section.illustration[0]} description={c.section.illustration[1]} /><div className="illustration-grid">{illustrations.map(([file, , shape], index) => <figure className={`art-card ${shape}`} key={file}><div className="image-wrap"><img src={`/works/illustration/${file}`} alt={`${c.imageAlt}: ${c.artworks[index]}`} /></div><figcaption><span>{String(index + 1).padStart(2, "0")}</span><h2>{c.artworks[index]}</h2></figcaption></figure>)}</div></section><SiteFooter locale={locale} /></main>;
 
-  if (section === "poems") return <main id="top" className="dark-page"><SiteHeader active={active} locale={locale} /><section className="section poems-section subpage"><SectionHead number="02" title={c.section.poems[0]} description={c.section.poems[1]} light /><div className="poem-gallery">{poems.map((number, index) => <figure className="poem-card" key={number}><img src={`/works/poems/poem-${number}.jpg`} alt={`${c.poemCaption} ${index + 1}`} /><figcaption>{c.poemCaption} · {String(index + 1).padStart(2, "0")}</figcaption></figure>)}</div></section><SiteFooter locale={locale} /></main>;
+  if (section === "poems") return <main id="top" className="dark-page"><SiteHeader active={active} locale={locale} /><section className="section poems-section subpage"><SectionHead number="02" title={c.section.poems[0]} description={c.section.poems[1]} light /><PoemBook locale={locale} /></section><SiteFooter locale={locale} /></main>;
 
   if (section === "books") return <main id="top"><SiteHeader active={active} locale={locale} /><section className="section books-section subpage"><SectionHead number="03" title={c.section.books[0]} description={c.section.books[1]} /><div className="book-projects">{c.books.map(([title, subtitle, description, path, images], projectIndex) => <article className="book-project" key={title}><div className="book-copy"><p>0{projectIndex + 1} / 03</p><h2>{title}</h2><span>{subtitle}</span><p>{description}</p></div><div className="book-images">{images.map((file, index) => <img className={index === 0 ? "book-cover" : "book-detail"} src={`/works/books/${path}/${file}`} alt={`${title} ${index + 1}`} key={file} />)}</div></article>)}</div></section><SiteFooter locale={locale} /></main>;
 
