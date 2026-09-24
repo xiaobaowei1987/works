@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 };
 
 export default function IllustrationPage() {
-  return <main id="top"><SiteHeader active="/illustration" /><section className="section illustration-section subpage">
+  return <main id="top" className="illustration-page"><SiteHeader active="/illustration" /><section className="section illustration-section subpage">
     <div className="section-head"><div><p>01</p><h1>插画</h1></div><p>人物、关系和那些很难解释的情绪。</p></div>
     <div className="illustration-grid">{illustrations.map(([file, title, shape], index) => <figure className={`art-card ${shape} art-${index + 1}`} key={file}>
       <div className="image-wrap"><img src={`/works/illustration/${file}`} alt={`插画作品《${title}》`} loading={index < 3 ? "eager" : "lazy"} /></div>
